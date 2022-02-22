@@ -19,3 +19,10 @@ Take a list of emails/passwords and test them against active directory. This ass
 The format of the required credential list is: user@domain.com:password    (1 entry per line)
 
 
+
+# Set-FirefoxMitigations.ps1
+Usage: ./Set-FirefoxMitigations.ps1
+A list of powershell process mitigations for firefox browser. These are part of the Microsoft EMET toolkit. I manually tested each one and enabled everything I could while still running the browser for day to day tasks. You may need to modify to fit your needs, sorry there doesnt seem to be a lot of documentation or recommendations out there like there is for SELinux.
+
+The ProcessMitigations module (also known as the Process Mitigation Management Tool) provides functionalities to allow users to configure and audit exploit mitigations for increased process security or for converting existing Enhanced Mitigation Experience Toolkit (EMET) policy settings.
+Set-ProcessMitigation, Get-ProcessMitigation
