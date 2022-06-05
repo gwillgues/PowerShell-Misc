@@ -3,7 +3,7 @@ A collection of various powershell related tools/scripts that I've found useful 
 
 
 # sendFile.ps1
-Send a file to a netcat via powershell!
+Send a file to a Netcat Listener natively via powershell!
 Usage: Modify the script for your environment, run the script <code>./sendFile.ps1</code> (or paste the modified script into a powershell window)
 
 
