@@ -4,10 +4,14 @@ A collection of various powershell related tools/scripts that I've found useful 
 
 # sendFile.ps1
 Send a file to a Netcat Listener natively via powershell!
-Usage: Modify the script for your environment, run the script <code>./sendFile.ps1</code> (or paste the modified script into a powershell window)
+Usage: run the script and run the function
 
+<code>./sendFile.ps1</code>
 
-This script base64 encodes a file, then sends to a netcat listener. You will need to change the IP/port in the script. 
+<code>sendFile -ip 192.168.0.127 -port 3333 -filepath C:\windows\system32\cmd.exe</code>
+
+This script Accepted an ip, port, and file path via command line arguments <code>-ip</code>, <code>-port</code>, <code>-filepath</code>, then base64 encodes the specified file, then sends to a netcat listener over the specified IP and port.
+
 To get the original file, run "base64 -d" in a linux terminal on the base64 encoded data. 
 
 # credentialTester.ps1
