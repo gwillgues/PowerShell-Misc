@@ -38,3 +38,11 @@ A list of powershell process mitigations for firefox browser. These are part of 
 
 The ProcessMitigations module (also known as the Process Mitigation Management Tool) provides functionalities to allow users to configure and audit exploit mitigations for increased process security or for converting existing Enhanced Mitigation Experience Toolkit (EMET) policy settings.
 Set-ProcessMitigation, Get-ProcessMitigation for Mozilla Firefox
+
+# encode_script.ps1
+
+Base64 encode a powershell script properly for usage in powershell encoded commands (powershell.exe -encodedcommand AAAA)
+
+The file in the get-content command needs to be modified to suit which script you want to encode. The run the script as follows:
+
+<code>./encode_script.ps1</code>
