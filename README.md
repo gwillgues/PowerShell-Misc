@@ -3,6 +3,7 @@ A collection of various powershell related tools/scripts that I've found useful 
 
 
 # sendFile.ps1
+
 Send a file to a Netcat Listener natively via powershell!
 Usage: run the script and run the function
 
@@ -10,7 +11,7 @@ Usage: run the script and run the function
 
 <code>sendFile -ip 192.168.0.127 -port 3333 -filepath C:\windows\system32\cmd.exe</code>
 
-This script Accepted an ip, port, and file path via command line arguments <code>-ip</code>, <code>-port</code>, <code>-filepath</code>, then base64 encodes the specified file, then sends to a netcat listener over the specified IP and port.
+This script accepts an ip, port, and file path via command line arguments <code>-ip</code>, <code>-port</code>, <code>-filepath</code>, then base64 encodes the specified file, then sends to a netcat listener over the specified IP and port.
 
 To get the original file, run "base64 -d" in a linux terminal on the base64 encoded data. 
 
