@@ -43,6 +43,9 @@ Set-ProcessMitigation, Get-ProcessMitigation for Mozilla Firefox
 
 Base64 encode a powershell script properly for usage in powershell encoded commands (powershell.exe -encodedcommand AAAA)
 
-The file in the get-content command needs to be modified to suit which script you want to encode. The run the script as follows:
+Usage:
 
 <code>./encode_script.ps1</code>
+<code>encode-script -file C:\path\to\script.ps1</script>
+
+The base64 encoded script will be output. You can then copy the base64 encoded data, and run it via "powershell.exe -encodedcommand AAAAA"
