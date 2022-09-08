@@ -45,7 +45,7 @@ Base64 encode a powershell script properly for usage in powershell encoded comma
 
 Usage:
 
-<code>./encode_script.ps1</code>
+<code>import-module ./encode_script.ps1</code>
 
 <code>encode-script -file C:\path\to\script.ps1</code>
 
