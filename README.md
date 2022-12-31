@@ -33,6 +33,6 @@ Base64 encode a powershell script properly for usage in powershell encoded comma
 
 Usage:
 
-<code>./encode-script.ps1 -file C:\path\to\script.ps1</code>
+<code>./encode_script.ps1 -file C:\path\to\script.ps1</code>
 
 The base64 encoded script will be output. You can then copy the base64 encoded data, and run it via "powershell.exe -encodedcommand AAAAA"
