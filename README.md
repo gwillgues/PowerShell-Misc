@@ -7,9 +7,9 @@ A collection of various powershell related tools/scripts that I've found useful 
 Send a file to a Netcat Listener natively via powershell!
 Usage: run the script and run the function
 
-<code>./sendFile.ps1</code>
 
-<code>sendFile -ip 192.168.0.127 -port 3333 -filepath C:\windows\system32\cmd.exe</code>
+
+<code>./sendFile.ps1 -ip 192.168.0.127 -port 3333 -filepath C:\windows\system32\cmd.exe</code>
 
 This script accepts an ip, port, and file path via command line arguments <code>-ip</code>, <code>-port</code>, <code>-filepath</code>, then base64 encodes the specified file, then sends to a netcat listener over the specified IP and port.
 
@@ -33,8 +33,6 @@ Base64 encode a powershell script properly for usage in powershell encoded comma
 
 Usage:
 
-<code>import-module ./encode_script.ps1</code>
-
-<code>encode-script -file C:\path\to\script.ps1</code>
+<code>./encode-script.ps1 -file C:\path\to\script.ps1</code>
 
 The base64 encoded script will be output. You can then copy the base64 encoded data, and run it via "powershell.exe -encodedcommand AAAAA"
